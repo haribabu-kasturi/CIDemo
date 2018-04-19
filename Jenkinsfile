@@ -1,41 +1,19 @@
 pipeline {
   agent any
   stages {
-    stage('Verify Sanity') {
+    stage('testing') {
       steps {
-        sh '''echo "Starting the build now" 
-'''
-        sleep 20
-        mail(subject: 'Starting Build', body: 'hei and hello ', charset: 'UTF', from: 'jenkins@ci.com', mimeType: 'Plaintext', to: 'haribabu.kasturi@cgi.com')
+        jiraSearch '10'
+        sleep 10
       }
     }
-    stage('Code Quality Verification ') {
+    stage('email to stakeholders') {
       steps {
-        sh 'echo "Running SonarCube" '
-      }
-    }
-    stage('Test on firefox') {
-      parallel {
-        stage('Test on firefox') {
-          steps {
-            sh 'echo "Testing on firefox" '
-          }
+        emailext(subject: 'For testing purpose', body: 'lorem ipsum', from: 'anuradha.bhattacharya@cgi.com', mimeType: 'text', to: 'dinesh.pahi@cgi.com')
+        timestamps() {
+          echo 'this pipeline is for testing'
         }
-        stage('Test on chrome ') {
-          steps {
-            sh 'echo "Test on Chrome" '
-          }
-        }
-        stage('Test on Opera ') {
-          steps {
-            sh 'echo "Test on Opera" '
-          }
-        }
-      }
-    }
-    stage('Deploy ') {
-      steps {
-        sh 'echo "create environment" '
+
       }
     }
   }
