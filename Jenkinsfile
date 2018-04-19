@@ -1,10 +1,9 @@
 pipeline {
   agent any
   stages {
-    stage('testing') {
+    stage('Search Jira Issue') {
       steps {
         jiraSearch 'project = ASDCUNIFY AND issuetype = Epic AND text ~ "configure"'
-        sleep 10
       }
     }
     stage('email to stakeholders') {
