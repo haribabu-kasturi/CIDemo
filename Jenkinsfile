@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Sleep') {
       steps {
-        sleep 20
+        sleep 2
       }
     }
     stage('printing message') {
