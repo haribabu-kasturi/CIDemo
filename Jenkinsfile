@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('testing') {
       steps {
-        jiraSearch '10'
+        jiraSearch 'project = ASDCUNIFY AND issuetype = Epic AND text ~ "configure"'
         sleep 10
       }
     }
