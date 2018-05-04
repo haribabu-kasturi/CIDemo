@@ -18,7 +18,7 @@ pipeline {
     }
     stage('teststep') {
       steps {
-        timeout(time: 20)
+        timeout(time: 2)
       }
     }
   }
