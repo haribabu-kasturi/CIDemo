@@ -16,5 +16,10 @@ pipeline {
         echo 'hello'
       }
     }
+    stage('teststep') {
+      steps {
+        timeout(time: 20)
+      }
+    }
   }
 }
