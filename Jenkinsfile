@@ -1,12 +1,17 @@
 pipeline {
-  agent any
+  agent {
+    dockerfile {
+      filename 'bjhbj'
+    }
+
+  }
   stages {
     stage('Sleep ') {
       steps {
         sleep 2
       }
     }
-    stage('') {
+    stage('error') {
       steps {
         echo 'Hello'
       }
