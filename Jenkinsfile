@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Sleep ') {
       steps {
-        sleep 2
+        sleep 10
       }
     }
     stage('email') {
@@ -16,7 +16,7 @@ pipeline {
         echo 'hello'
       }
     }
-    stage('teststep') {
+    stage('enforce time limit') {
       steps {
         timeout(time: 2)
       }
