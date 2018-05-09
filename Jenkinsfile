@@ -16,10 +16,5 @@ pipeline {
         echo 'hello'
       }
     }
-    stage('enforce time limit') {
-      steps {
-        timeout(time: 2)
-      }
-    }
   }
 }
