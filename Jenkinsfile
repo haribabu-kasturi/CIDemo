@@ -20,9 +20,9 @@ pipeline {
         echo 'hello'
       }
     }
-    stage('error signal') {
+    stage('Sleep') {
       steps {
-        error 'Message not printed '
+        sleep 20
       }
     }
   }
