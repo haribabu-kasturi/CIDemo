@@ -15,12 +15,6 @@ pipeline {
         }
       }
     }
-    stage('email') {
-      steps {
-        mail(subject: 'testing', body: 'testing', from: 'anuradha.bhattacharya@cgi.com', mimeType: 'text', to: 'mrinmoy.nath@cgi.com')
-        echo 'Test'
-      }
-    }
     stage('print') {
       steps {
         echo 'hello'
