@@ -26,5 +26,10 @@ pipeline {
         echo 'hello'
       }
     }
+    stage('error signal') {
+      steps {
+        error 'Message not printed '
+      }
+    }
   }
 }
