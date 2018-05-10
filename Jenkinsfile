@@ -2,8 +2,17 @@ pipeline {
   agent any
   stages {
     stage('Sleep ') {
-      steps {
-        sleep 10
+      parallel {
+        stage('Sleep ') {
+          steps {
+            sleep 10
+          }
+        }
+        stage('Sleep1') {
+          steps {
+            echo 'Sleep1'
+          }
+        }
       }
     }
     stage('email') {
